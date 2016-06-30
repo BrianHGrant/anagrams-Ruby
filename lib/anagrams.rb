@@ -1,11 +1,16 @@
 class String
-  define_method(:anagrams) do |word|
-    word = word.split('').sort!
+  define_method(:anagrams) do |sentence|
+    words = sentence.split(' ')
     input = self.split('').sort!
-    if (word == input)
-      return "This is a anagram!."
-    else
-      return "This is not a anagram!"
+    resultArray =[]
+    words.each() do |word|
+      letters = word.split('').sort!
+      if (letters == input)
+        resultArray.push(word.concat(": This is a anagram!"))
+      else
+        resultArray.push(word.concat(": This is not a anagram!"))
+      end
     end
+    resultArray.join(" ")
   end
 end
