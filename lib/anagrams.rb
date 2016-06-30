@@ -6,9 +6,11 @@ class String
     words.each() do |word|
       letters = word.split('').sort!
       if (letters == input)
-        resultArray.push(word.concat(": This is a anagram!"))
+        resultArray.push(word)
+        resultArray.push("is a anagram!")
       else
-        resultArray.push(word.concat(": This is not a anagram!"))
+        resultArray.push(word)
+        resultArray.push("is not a anagram!")
       end
     end
     resultArray.join(" ")
